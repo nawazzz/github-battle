@@ -24,6 +24,7 @@ class App extends React.Component {
     //     ghData: data 
     //   })
     // })
+    console.log(this.state.handleButtonOne, this.state.handleButtonTwo)
   }
 
   handleinputValueOne = (event) => {
@@ -36,13 +37,13 @@ class App extends React.Component {
     if (this.state.inputValueOne) {
       this.setState({
         handleButtonOne: !this.state.handleButtonOne
-      }, () => { console.log(this.state) })
+      })
       const url = `https://api.github.com/users/${this.state.inputValueOne}`
       fetch(url).then(res => res.json()).then(data => {
         // console.log(data)
         this.setState({
           ghData: data
-        }, () => { console.log(this.state) })
+        })
       })
     }
     this.setState({
@@ -95,7 +96,7 @@ class App extends React.Component {
           <h2>User: {this.state.ghData.login}</h2>
           <h3>Job: {this.state.ghData.bio}</h3>
         </div>
-        <div style={{display: 'flex', margin: '50px'}}>
+        <div style={{ display: 'flex', margin: '50px' }}>
           <div style={{ display: this.state.handleButtonOne ? "block" : "none" }}>
             <TextField
               id="outlined-basic" value={this.state.inputValueOne} onChange={this.handleinputValueOne}
@@ -115,22 +116,28 @@ class App extends React.Component {
             >Submit</Button>
           </div>
         </div>
+        <div style={{ display: 'flex' }}>
+          <div style={{ display: !this.state.handleButtonOne ? "block" : "none", width: "200px", height: "50px" }}>
+            <img src={this.state.ghData.avatar_url} width={"100px"} />
+            <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
+            <span onClick={this.handleUserOutput}
+              style={{ cursor: "pointer", fontWeight: "700" }}
+            >x</span>
+          </div>
 
-        <div style={{ display: !this.state.handleButtonOne ? "block" : "none", width: "200px", height: "50px" }}>
-          <img src={this.state.ghData.avatar_url} width={"100px"} />
-          <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
-          <span onClick={this.handleUserOutput}
-            style={{ cursor: "pointer", fontWeight: "700" }}
-          >x</span>
+          <div style={{ display: !this.state.handleButtonTwo ? "block" : "none", width: "200px", height: "50px" }}>
+            <img src={this.state.ghDataSecondUser.avatar_url} width={"100px"} />
+            <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
+            <span onClick={this.handleUserOutputTwo}
+              style={{ cursor: "pointer", fontWeight: "700" }}
+            >x</span>
+          </div>
+
         </div>
 
-        <div style={{ display: !this.state.handleButtonTwo ? "block" : "none", width: "200px", height: "50px" }}>
-          <img src={this.state.ghDataSecondUser.avatar_url} width={"100px"} />
-          <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
-          <span onClick={this.handleUserOutputTwo}
-            style={{ cursor: "pointer", fontWeight: "700" }}
-          >x</span>
-        </div>
+
+        <button style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none', margin: '100px', cursor: 'pointer' }}
+          >Battle</button>
       </React.Fragment>
     )
   }
