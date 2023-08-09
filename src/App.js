@@ -14,7 +14,11 @@ class App extends React.Component {
       inputValueTwo: '',
       handleButtonOne: true,
       handleButtonTwo: true,
-      showResult: false
+      showResult: false,
+      resultDataOne: {},
+      resultDataTwo: {},
+      totalScoreUserOne: 0,
+      totalScoreUserTwo: 0
     }
   }
 
@@ -94,6 +98,29 @@ class App extends React.Component {
     this.setState({
       showResult: !this.state.showResult
     })
+
+    let objUserOne = {
+      repoCount: this.state.ghData.public_repos + 0.5,
+      followersCount: this.state.ghData.followers + 1,
+      followingCount: this.state.ghData.following + 1
+    }
+
+    let userOneScore = Math.ceil(objUserOne.repoCount + objUserOne.followersCount + objUserOne.followingCount)
+
+    let objUserTwo = {
+      repoCount: this.state.ghDataSecondUser.public_repos + 0.5,
+      followersCount: this.state.ghDataSecondUser.followers + 1,
+      followingCount: this.state.ghDataSecondUser.following + 1
+    }
+
+    let userTwoScore = Math.ceil(objUserTwo.repoCount + objUserTwo.followersCount + objUserTwo.followingCount)
+
+    this.setState({
+      resultDataOne: objUserOne,
+      resultDataTwo: objUserTwo,
+      totalScoreUserOne: userOneScore,
+      totalScoreUserTwo: userTwoScore
+    })
   }
 
   render() {
@@ -104,7 +131,8 @@ class App extends React.Component {
             <div>
               <BattleResult ghData={this.state.ghData} ghDataSecondUser={this.state.ghDataSecondUser} inputValueOne={this.state.inputValueOne}
                 inputValueTwo={this.state.inputValueTwo} handleButtonOne={this.state.handleButtonOne} handleButtonTwo={this.state.handleButtonTwo}
-                showResult={this.state.showResult} />
+                showResult={this.state.showResult} resultDataOne={this.state.resultDataOne} resultDataTwo={this.state.resultDataTwo} 
+                totalScoreUserOne={this.state.totalScoreUserOne} totalScoreUserTwo={this.state.totalScoreUserTwo} />
             </div>
           ) : (
             <div>
