@@ -92,7 +92,7 @@ class App extends React.Component {
 
   handleResults = (event) => {
     this.setState({
-      showResult: true
+      showResult: !this.state.showResult
     })
   }
 
