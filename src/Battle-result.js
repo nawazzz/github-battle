@@ -7,11 +7,11 @@ class BattleResult extends React.Component {
                 <div>
                     <h1>{this.props.totalScoreUserOne>this.props.totalScoreUserTwo? 'Winner': 'Loser' }</h1>
                     <img src={this.props.ghData.avatar_url} width={"100px"} />
-                    <h3>{this.props.totalScoreUserOne}</h3>
+                    <h3>score: {this.props.totalScoreUserOne}</h3>
                     <h2>{this.props.ghData.login}</h2>
                     <li>{this.props.ghData.login}</li>
-                    <li>{this.props.ghData.location | 'nil'}</li>
-                    <li>{this.props.ghData.company | 'nil'}</li>
+                    <li>{this.props.ghData.location }</li>
+                    <li>{this.props.ghData.company }</li>
                     <li>{this.props.ghData.followers}</li>
                     <li>{this.props.ghData.following}</li>
                     <li>{this.props.ghData.public_repos}</li>
@@ -19,7 +19,7 @@ class BattleResult extends React.Component {
                 <div>
                     <h1>{this.props.totalScoreUserOne<this.props.totalScoreUserTwo? 'Winner': 'Loser' }</h1>
                     <img src={this.props.ghDataSecondUser.avatar_url} width={"100px"} />
-                    <h3>{this.props.totalScoreUserTwo}</h3>
+                    <h3>score: {this.props.totalScoreUserTwo}</h3>
                     <h2>{this.props.ghDataSecondUser.login}</h2>
                     <li>{this.props.ghDataSecondUser.login}</li>
                     <li>{this.props.ghDataSecondUser.location}</li>

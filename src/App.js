@@ -1,8 +1,9 @@
-import './App.css';
+import './App.scss';
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import BattleResult from './Battle-result';
+import Battling from './Battling';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends React.Component {
       resultDataOne: {},
       resultDataTwo: {},
       totalScoreUserOne: 0,
-      totalScoreUserTwo: 0
+      totalScoreUserTwo: 0,
+      showLoadingPage: false
     }
   }
 
@@ -125,29 +127,43 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div style={{ display: this.state.showLoadingPage === false ? 'block' : 'none' }}>
         {this.state.showResult ?
           (
             <div>
               <BattleResult ghData={this.state.ghData} ghDataSecondUser={this.state.ghDataSecondUser} inputValueOne={this.state.inputValueOne}
                 inputValueTwo={this.state.inputValueTwo} handleButtonOne={this.state.handleButtonOne} handleButtonTwo={this.state.handleButtonTwo}
-                showResult={this.state.showResult} resultDataOne={this.state.resultDataOne} resultDataTwo={this.state.resultDataTwo} 
+                showResult={this.state.showResult} resultDataOne={this.state.resultDataOne} resultDataTwo={this.state.resultDataTwo}
                 totalScoreUserOne={this.state.totalScoreUserOne} totalScoreUserTwo={this.state.totalScoreUserTwo} />
             </div>
           ) : (
-            <div>
+            <div className='mainContainer'>
               <div>
-                <div className="App">
-                  <h1>Github Battle</h1>
-                  <h2>User: {this.state.ghData.login}</h2>
-                  <h3>Job: {this.state.ghData.bio}</h3>
+                <div className="app">
+                  <h1>Instructions</h1>
+
+                  <div className='heroContainer'>
+                    <div style={{textAlign: 'center'}}>
+                      <h5>Enter Two GitHub Users</h5>
+                      <p className='users'></p>
+                    </div>
+                    <div>
+                      <h5>Battle</h5>
+                      <p className='battle'></p>
+                    </div>
+                    <div>
+                      <h5>See the Winner</h5>
+                      <p className='winner'></p>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', margin: '50px' }}>
+                <h3 style={{textAlign: 'center'}}>Players</h3>
+                <div className='inputContainer'>
                   <div style={{ display: this.state.handleButtonOne ? "block" : "none" }}>
                     <TextField
                       id="outlined-basic" value={this.state.inputValueOne} onChange={this.handleinputValueOne}
                       label="Enter GitHub user" variant="outlined" />
-                    <Button variant="contained"
+                    <Button variant="contained" disabled={this.state.inputValueOne ? "true" : "false"}
                       onClick={this.handleSubmitButtonOne}
                       style={{ height: "55px" }}
                     >Submit</Button>
@@ -188,8 +204,8 @@ class App extends React.Component {
               </div>
             </div>
           )}
-
-      </React.Fragment>
+        <Battling showLoadingPage={this.state.showLoadingPage} />
+      </div>
     )
   }
 }
