@@ -145,6 +145,7 @@ class App extends React.Component {
                   <div className='heroContainer'>
                     <div style={{textAlign: 'center'}}>
                       <h5>Enter Two GitHub Users</h5>
+                      <img src=''/>
                       <p className='users'></p>
                     </div>
                     <div>
@@ -163,7 +164,7 @@ class App extends React.Component {
                     <TextField
                       id="outlined-basic" value={this.state.inputValueOne} onChange={this.handleinputValueOne}
                       label="Enter GitHub user" variant="outlined" />
-                    <Button variant="contained" disabled={this.state.inputValueOne ? "true" : "false"}
+                    <Button variant="contained" disabled={!this.state.inputValueOne}
                       onClick={this.handleSubmitButtonOne}
                       style={{ height: "55px" }}
                     >Submit</Button>
@@ -172,7 +173,7 @@ class App extends React.Component {
                     <TextField
                       id="outlined-basic" value={this.state.inputValueTwo} onChange={this.handleinputValueTwo}
                       label="Enter GitHub user" variant="outlined" />
-                    <Button variant="contained"
+                    <Button variant="contained" disabled={!this.state.inputValueTwo}
                       onClick={this.handleSubmitButtonTwo}
                       style={{ height: "55px" }}
                     >Submit</Button>
