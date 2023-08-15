@@ -166,7 +166,7 @@ class App extends React.Component {
                       label="Enter GitHub user" variant="outlined" />
                     <Button variant="contained" disabled={!this.state.inputValueOne}
                       onClick={this.handleSubmitButtonOne}
-                      style={{ height: "55px" }}
+                      style={{ height: "55px", cursor: 'pointer' }}
                     >Submit</Button>
                   </div>
                   <div style={{ display: this.state.handleButtonTwo ? "block" : "none" }}>
@@ -175,7 +175,7 @@ class App extends React.Component {
                       label="Enter GitHub user" variant="outlined" />
                     <Button variant="contained" disabled={!this.state.inputValueTwo}
                       onClick={this.handleSubmitButtonTwo}
-                      style={{ height: "55px" }}
+                      style={{ height: "55px", cursor: 'pointer' }}
                     >Submit</Button>
                   </div>
                 </div>
@@ -198,9 +198,9 @@ class App extends React.Component {
 
                 </div>
                 <div>
-                  <button onClick={this.handleResults}
+                  <Button variant="contained" onClick={this.handleResults}
                     style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none', margin: '100px', cursor: 'pointer' }}
-                  >Battle</button>
+                  >Battle</Button>
                 </div>
               </div>
             </div>
