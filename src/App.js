@@ -179,8 +179,9 @@ class App extends React.Component {
                     >Submit</Button>
                   </div>
                 </div>
-                <div style={{ display: 'flex' }}>
-                  <div style={{ display: !this.state.handleButtonOne ? "block" : "none", width: "200px", height: "50px" }}>
+                <div className='searchResultContainer'>
+                  <div className='searchResultChildContainer'
+                    style={{ display: !this.state.handleButtonOne ? "block" : "none"}}>
                     <img src={this.state.ghData.avatar_url} width={"100px"} />
                     <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
                     <span onClick={this.handleUserOutput}
@@ -188,8 +189,9 @@ class App extends React.Component {
                     >x</span>
                   </div>
 
-                  <div style={{ display: !this.state.handleButtonTwo ? "block" : "none", width: "200px", height: "50px" }}>
-                    <img src={this.state.ghDataSecondUser.avatar_url} width={"100px"} />
+                  <div className='searchResultChildContainer'
+                    style={{ display: !this.state.handleButtonTwo ? "block" : "none" }}>
+                     <img src={this.state.ghDataSecondUser.avatar_url} width={"100px"}/>
                     <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
                     <span onClick={this.handleUserOutputTwo}
                       style={{ cursor: "pointer", fontWeight: "700" }}
