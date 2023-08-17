@@ -144,17 +144,16 @@ class App extends React.Component {
 
                   <div className='heroContainer'>
                     <div style={{textAlign: 'center'}}>
-                      <h5>Enter Two GitHub Users</h5>
-                      <img src=''/>
-                      <p className='users'></p>
+                      <h3>Enter Two GitHub Users</h3>
+                      <img src={require('./assets/enter-two-users.jpg')}/>
                     </div>
                     <div>
-                      <h5>Battle</h5>
-                      <p className='battle'></p>
+                      <h3>Battle</h3>
+                      <img src={require('./assets/battle.jpg')}/>
                     </div>
                     <div>
-                      <h5>See the Winner</h5>
-                      <p className='winner'></p>
+                      <h3>See the Winner</h3>
+                      <img src={require('./assets/see-the-winner.jpg')}/>
                     </div>
                   </div>
                 </div>
@@ -182,16 +181,15 @@ class App extends React.Component {
                 <div className='searchResultContainer'>
                   <div className='searchResultChildContainer'
                     style={{ display: !this.state.handleButtonOne ? "block" : "none"}}>
-                    <img src={this.state.ghData.avatar_url} width={"100px"} />
+                    <img src={this.state.ghData.avatar_url} width={"55px"} />
                     <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
                     <span onClick={this.handleUserOutput}
                       style={{ cursor: "pointer", fontWeight: "700" }}
                     >x</span>
                   </div>
-
                   <div className='searchResultChildContainer'
                     style={{ display: !this.state.handleButtonTwo ? "block" : "none" }}>
-                     <img src={this.state.ghDataSecondUser.avatar_url} width={"100px"}/>
+                     <img src={this.state.ghDataSecondUser.avatar_url} width={"55px"}/>
                     <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
                     <span onClick={this.handleUserOutputTwo}
                       style={{ cursor: "pointer", fontWeight: "700" }}

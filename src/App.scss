@@ -8,26 +8,13 @@
 
     .heroContainer {
       display: flex;
-      width: 60%;
+      width: 100%;
       margin: 0 auto;
       justify-content: space-between;
 
-      .users {
-        background-image: url(./assets/enter-two-users.jpg);
-        width: 50px;
-        height: 20px;
-      }
-
-      .battle {
-        background-image: url(./assets/battle.jpg);
-        width: 50px;
-        height: 20px;
-      }
-
-      .winner {
-        background-image: url(./assets/see-the-winner.jpg);
-        width: 50px;
-        height: 20px;
+      img{
+        width: 230px;
+        height: 230px;
       }
     }
   }
