@@ -195,9 +195,11 @@ class App extends React.Component {
                   </div>
 
                 </div>
-                <div>
+                <div style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none' }}
+                  className='battleButton'>
                   <Button variant="contained" onClick={this.handleResults}
-                    style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none', margin: '100px', cursor: 'pointer' }}
+                    
+                    
                   >Battle</Button>
                 </div>
               </div>
