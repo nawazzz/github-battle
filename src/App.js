@@ -183,14 +183,14 @@ class App extends React.Component {
                     <img src={this.state.ghData.avatar_url} width={"55px"} />
                     <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
                     <span onClick={this.handleUserOutput}
-                      style={{ cursor: "pointer", fontWeight: "700" }}
+                      style={{display: !this.state.handleButtonOne ? 'block': 'none', cursor: "pointer", fontWeight: "700" }}
                     >x</span>
                   </div>
                   <div className={!this.state.handleButtonTwo ? 'searchResultChildContainer': "none"}>
                      <img src={this.state.ghDataSecondUser.avatar_url} width={"55px"}/>
                     <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
                     <span onClick={this.handleUserOutputTwo}
-                      style={{ cursor: "pointer", fontWeight: "700" }}
+                      style={{display: !this.state.handleButtonTwo ? 'block': "none", cursor: "pointer", fontWeight: "700" }}
                     >x</span>
                   </div>
 
