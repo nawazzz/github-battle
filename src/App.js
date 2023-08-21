@@ -178,7 +178,7 @@ class App extends React.Component {
                     >Submit</Button>
                   </div>
                 </div>
-                {/* <div className='searchResultContainer'> */}
+                <div className='searchResultContainer'>
                   <div className={!this.state.handleButtonOne ? 'searchResultChildContainer': "none"}>
                     <img src={this.state.ghData.avatar_url} width={"55px"} />
                     <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
@@ -194,7 +194,7 @@ class App extends React.Component {
                     >x</span>
                   </div>
 
-                {/* </div> */}
+                </div>
                 <div>
                   <Button variant="contained" onClick={this.handleResults}
                     style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none', margin: '100px', cursor: 'pointer' }}
