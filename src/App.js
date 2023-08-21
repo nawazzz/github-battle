@@ -157,7 +157,7 @@ class App extends React.Component {
                     </div>
                   </div>
                 </div>
-                <h3 style={{textAlign: 'center'}}>Players</h3>
+                <h2 style={{textAlign: 'center'}}>Players</h2>
                 <div className='inputContainer'>
                   <div style={{ display: this.state.handleButtonOne ? "block" : "none" }}>
                     <TextField
@@ -178,17 +178,15 @@ class App extends React.Component {
                     >Submit</Button>
                   </div>
                 </div>
-                <div className='searchResultContainer'>
-                  <div className='searchResultChildContainer'
-                    style={{ display: !this.state.handleButtonOne ? "block" : "none"}}>
+                {/* <div className='searchResultContainer'> */}
+                  <div className={!this.state.handleButtonOne ? 'searchResultChildContainer': "none"}>
                     <img src={this.state.ghData.avatar_url} width={"55px"} />
                     <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
                     <span onClick={this.handleUserOutput}
                       style={{ cursor: "pointer", fontWeight: "700" }}
                     >x</span>
                   </div>
-                  <div className='searchResultChildContainer'
-                    style={{ display: !this.state.handleButtonTwo ? "block" : "none" }}>
+                  <div className={!this.state.handleButtonTwo ? 'searchResultChildContainer': "none"}>
                      <img src={this.state.ghDataSecondUser.avatar_url} width={"55px"}/>
                     <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
                     <span onClick={this.handleUserOutputTwo}
@@ -196,7 +194,7 @@ class App extends React.Component {
                     >x</span>
                   </div>
 
-                </div>
+                {/* </div> */}
                 <div>
                   <Button variant="contained" onClick={this.handleResults}
                     style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none', margin: '100px', cursor: 'pointer' }}
