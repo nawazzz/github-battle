@@ -143,21 +143,21 @@ class App extends React.Component {
                   <h1>Instructions</h1>
 
                   <div className='heroContainer'>
-                    <div style={{textAlign: 'center'}}>
+                    <div style={{ textAlign: 'center' }}>
                       <h3>Enter Two GitHub Users</h3>
-                      <img src={require('./assets/enter-two-users.jpg')}/>
+                      <img src={require('./assets/enter-two-users.jpg')} />
                     </div>
                     <div>
                       <h3>Battle</h3>
-                      <img src={require('./assets/battle.jpg')}/>
+                      <img src={require('./assets/battle.jpg')} />
                     </div>
                     <div>
                       <h3>See the Winner</h3>
-                      <img src={require('./assets/see-the-winner.jpg')}/>
+                      <img src={require('./assets/see-the-winner.jpg')} />
                     </div>
                   </div>
                 </div>
-                <h2 style={{textAlign: 'center'}}>Players</h2>
+                <h2 style={{ textAlign: 'center' }}>Players</h2>
                 <div className='inputContainer'>
                   <div style={{ display: this.state.handleButtonOne ? "block" : "none" }}>
                     <TextField
@@ -179,18 +179,25 @@ class App extends React.Component {
                   </div>
                 </div>
                 <div className='searchResultContainer'>
-                  <div className={!this.state.handleButtonOne ? 'searchResultChildContainer': "none"}>
-                    <img src={this.state.ghData.avatar_url} width={"55px"} />
-                    <span><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
+                  <div className={!this.state.handleButtonOne ? 'searchResultChildContainer' : "none"}>
+                    <div className='userNameResetContainer'>
+                      <img src={this.state.ghData.avatar_url} width={"55px"} />
+
+                      <span className='userLinkContainer'><a href='https://github.com/nawazzz'>{this.state.ghData.login}</a></span>
+                    </div>
                     <span onClick={this.handleUserOutput}
-                      style={{display: !this.state.handleButtonOne ? 'block': 'none', cursor: "pointer", fontWeight: "700" }}
+                      style={{ display: !this.state.handleButtonOne ? 'block' : 'none', cursor: "pointer", fontWeight: "700", paddingTop: '10px' }}
                     >x</span>
+
                   </div>
-                  <div className={!this.state.handleButtonTwo ? 'searchResultChildContainer': "none"}>
-                     <img src={this.state.ghDataSecondUser.avatar_url} width={"55px"}/>
-                    <span><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
+                  <div className={!this.state.handleButtonTwo ? 'searchResultChildContainer' : "none"}>
+                    <div className='userNameResetContainer'>
+                      <img src={this.state.ghDataSecondUser.avatar_url} width={"55px"} />
+
+                      <span className='userLinkContainer'><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
+                    </div>
                     <span onClick={this.handleUserOutputTwo}
-                      style={{display: !this.state.handleButtonTwo ? 'block': "none", cursor: "pointer", fontWeight: "700" }}
+                      style={{ display: !this.state.handleButtonTwo ? 'block' : "none", cursor: "pointer", fontWeight: "700", paddingTop: '10px' }}
                     >x</span>
                   </div>
 
@@ -198,8 +205,8 @@ class App extends React.Component {
                 <div style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none' }}
                   className='battleButton'>
                   <Button variant="contained" onClick={this.handleResults}
-                    
-                    
+
+
                   >Battle</Button>
                 </div>
               </div>
