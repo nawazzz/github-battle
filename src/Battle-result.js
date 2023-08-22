@@ -1,9 +1,12 @@
 import React from "react";
+import './Battle-result.scss';
 
 class BattleResult extends React.Component {
     render() {
         return(
-            <div style={{display: "flex", width: '80%', margin: '0 auto', justifyContent: 'space-between'}}>
+            <div className="mainContainer"
+                // style={{display: "flex", width: '80%', margin: '0 auto', justifyContent: 'space-between'}}
+                >
                 <div>
                     <h1>{this.props.totalScoreUserOne>this.props.totalScoreUserTwo? 'Winner': 'Loser' }</h1>
                     <img src={this.props.ghData.avatar_url} width={"100px"} />
