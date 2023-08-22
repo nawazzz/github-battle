@@ -1,5 +1,5 @@
 import React from "react";
-import './Battle-result.scss';
+import './Result.scss';
 
 class BattleResult extends React.Component {
     render() {
@@ -8,7 +8,7 @@ class BattleResult extends React.Component {
                 // style={{display: "flex", width: '80%', margin: '0 auto', justifyContent: 'space-between'}}
                 >
                 <div>
-                    <h1>{this.props.totalScoreUserOne>this.props.totalScoreUserTwo? 'Winner': 'Loser' }</h1>
+                    <h1>{this.props.totalScoreUserOne>this.props.totalScoreUserTwo? 'Winner': this.props.totalScoreUserOne === this.props.totalScoreUserTwo? 'Tie' :  'Loser' }</h1>
                     <img src={this.props.ghData.avatar_url} width={"100px"} />
                     <h3>score: {this.props.totalScoreUserOne}</h3>
                     <h2>{this.props.ghData.login}</h2>
@@ -20,7 +20,7 @@ class BattleResult extends React.Component {
                     <li>{this.props.ghData.public_repos}</li>
                 </div>
                 <div>
-                    <h1>{this.props.totalScoreUserOne<this.props.totalScoreUserTwo? 'Winner': 'Loser' }</h1>
+                    <h1>{this.props.totalScoreUserOne<this.props.totalScoreUserTwo? 'Winner': this.props.totalScoreUserOne === this.props.totalScoreUserTwo? 'Tie' : 'Loser' }</h1>
                     <img src={this.props.ghDataSecondUser.avatar_url} width={"100px"} />
                     <h3>score: {this.props.totalScoreUserTwo}</h3>
                     <h2>{this.props.ghDataSecondUser.login}</h2>
