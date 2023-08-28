@@ -3,21 +3,27 @@
   margin: 0 auto;
 
   // border: 1px dotted black;
-  .app {
-    text-align: center;
-
-    .heroContainer {
-      display: flex;
-      width: 100%;
-      margin: 0 auto;
-      justify-content: space-between;
-
-      img{
-        width: 230px;
-        height: 230px;
+  .subContainer{
+    width: 55%;
+    margin: 0 auto;
+    .app {
+      text-align: center;
+  
+      .heroContainer {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        justify-content: space-between;
+  
+        img{
+          width: 230px;
+          height: 230px;
+        }
       }
     }
+
   }
+  
 
   .inputContainer {
     display: flex;

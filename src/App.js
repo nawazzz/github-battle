@@ -127,7 +127,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={{ display: this.state.showLoadingPage === false ? 'block' : 'none' }}>
+      <div style={{ display: this.state.showLoadingPage === false ? 'block' : 'none', background: '#f3f3f3' }}>
         {this.state.showResult ?
           (
             <div>
@@ -137,8 +137,8 @@ class App extends React.Component {
                 totalScoreUserOne={this.state.totalScoreUserOne} totalScoreUserTwo={this.state.totalScoreUserTwo} />
             </div>
           ) : (
-            <div className='mainContainer'>
-              <div>
+            <div className='mainContainer' style={{background: '#f3f3f3'}}>
+              <div className='subContainer'>
                 <div className="app">
                   <h1>Instructions</h1>
 
@@ -205,8 +205,6 @@ class App extends React.Component {
                 <div style={{ display: !this.state.handleButtonOne && !this.state.handleButtonTwo ? 'block' : 'none' }}
                   className='battleButton'>
                   <Button variant="contained" onClick={this.handleResults}
-
-
                   >Battle</Button>
                 </div>
               </div>

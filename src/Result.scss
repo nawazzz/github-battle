@@ -1,8 +1,8 @@
-.mainContainer{
+.mainContainerResult{
     display: flex;
     justify-content: space-between;
-    // width: 60%;
-    margin: 100px auto;
+    width: 64%;
+    margin: 0 auto;
     .userResult{
         width: 50%;
         text-align: center;
@@ -25,7 +25,13 @@ li{
     text-align: left;
     width: 140px;
 }
+h1{
+    color: brown;
+}
 h2{
     color: #8a2be2;
     cursor: pointer;
+}
+h3{
+    color: #00f;
 }
