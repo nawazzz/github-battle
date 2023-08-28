@@ -1,6 +1,23 @@
 .mainContainer{
     display: flex;
     justify-content: space-between;
-    width: 30%;
-    margin: 0 auto;
+    // width: 60%;
+    margin: 100px auto;
+    .userResult{
+        width: 50%;
+        text-align: center;
+        border: 0.5px solid blue;
+        margin: 70px;
+        border-radius: 10px;
+    }
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin: 0 67px;
+}
+li{
+    list-style-type: none;
 }
