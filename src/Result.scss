@@ -15,9 +15,12 @@
 ul{
     display: flex;
     justify-content: space-between;
-    width: 100px;
-    margin: 0 67px;
+    width: 175px;
+    margin: 10px 67px;
 }
 li{
     list-style-type: none;
+    font-size: 20px;
+    text-align: left;
+    width: 140px;
 }
