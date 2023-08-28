@@ -9,7 +9,7 @@ class BattleResult extends React.Component {
             >
                 <div className="userResult">
                     <h1>{this.props.totalScoreUserOne > this.props.totalScoreUserTwo ? 'Winner' : this.props.totalScoreUserOne === this.props.totalScoreUserTwo ? 'Tie' : 'Loser'}</h1>
-                    <img src={this.props.ghData.avatar_url} width={"100px"} />
+                    <img src={this.props.ghData.avatar_url} width={"200px"} />
                     <h3>score: {this.props.totalScoreUserOne}</h3>
                     <h2>{this.props.ghData.login}</h2>
                     <ul>
@@ -39,7 +39,7 @@ class BattleResult extends React.Component {
                 </div>
                 <div className="userResult">
                     <h1>{this.props.totalScoreUserOne < this.props.totalScoreUserTwo ? 'Winner' : this.props.totalScoreUserOne === this.props.totalScoreUserTwo ? 'Tie' : 'Loser'}</h1>
-                    <img src={this.props.ghDataSecondUser.avatar_url} width={"100px"} />
+                    <img src={this.props.ghDataSecondUser.avatar_url} width={"200px"} />
                     <h3>score: {this.props.totalScoreUserTwo}</h3>
                     <h2>{this.props.ghDataSecondUser.login}</h2>
                     <ul>

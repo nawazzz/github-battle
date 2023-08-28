@@ -6,9 +6,10 @@
     .userResult{
         width: 50%;
         text-align: center;
-        border: 0.5px solid blue;
+        // border: 0.5px solid blue;
         margin: 70px;
         border-radius: 10px;
+        background: #d3d3d3;
     }
 }
 
@@ -23,4 +24,8 @@ li{
     font-size: 20px;
     text-align: left;
     width: 140px;
+}
+h2{
+    color: #8a2be2;
+    cursor: pointer;
 }
