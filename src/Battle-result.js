@@ -8,7 +8,7 @@ class BattleResult extends React.Component {
             // style={{display: "flex", width: '80%', margin: '0 auto', justifyContent: 'space-between'}}
             >
                 <div className="userResult">
-                    <h1>{this.props.totalScoreUserOne > this.props.totalScoreUserTwo ? 'Winner' : this.props.totalScoreUserOne === this.props.totalScoreUserTwo ? 'Tie' : 'Loser'}</h1>
+                    <h1>{this.props.totalScoreUserOne > this.props.totalScoreUserTwo ? 'Winner' : this.props.totalScoreUserOne === this.props.totalScoreUserTwo ? 'Tie' : 'Loser'} </h1>
                     <img src={this.props.ghData.avatar_url} width={"200px"} />
                     <h3>score: {this.props.totalScoreUserOne}</h3>
                     <h2>{this.props.ghData.login}</h2>
@@ -48,11 +48,11 @@ class BattleResult extends React.Component {
                     </ul>
                     <ul>
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" size="22" color="rgb(144, 116, 255)" height="22" width="22" style={{ color: "rgb(144, 116, 255);" }}><path d="M225.38 233.37c-12.5 12.5-12.5 32.76 0 45.25 12.49 12.5 32.76 12.5 45.25 0 12.5-12.5 12.5-32.76 0-45.25-12.5-12.49-32.76-12.49-45.25 0zM248 8C111.03 8 0 119.03 0 256s111.03 248 248 248 248-111.03 248-248S384.97 8 248 8zm126.14 148.05L308.17 300.4a31.938 31.938 0 0 1-15.77 15.77l-144.34 65.97c-16.65 7.61-33.81-9.55-26.2-26.2l65.98-144.35a31.938 31.938 0 0 1 15.77-15.77l144.34-65.97c16.65-7.6 33.8 9.55 26.19 26.2z"></path></svg>
-                        <li>{this.props.ghDataSecondUser.location}</li>
+                        <li>{this.props.ghDataSecondUser.location?this.props.ghDataSecondUser.location: 'nil'}</li>
                     </ul>
                     <ul>
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" size="22" color="#795548" height="22" width="22" style={{ color: "rgb(121, 85, 72);" }}><path d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"></path></svg>
-                        <li>{this.props.ghDataSecondUser.company}</li>
+                        <li>{this.props.ghDataSecondUser.company?this.props.ghDataSecondUser.company: 'nil'}</li>
                     </ul>
                     <ul>
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" color="rgb(129, 195, 245)" size="22" height="22" width="22" style={{ color: "rgb(129, 195, 245);" }}><path d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path></svg>
