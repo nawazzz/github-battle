@@ -127,6 +127,19 @@ class App extends React.Component {
     })
   }
 
+  handleKeyDown = (event) => {
+    console.log(event)
+    // if (event.code === "Enter" ) {
+    //   this.handleinputValueTwo()
+    // }
+  } 
+
+  handleKeyDownOne = (event) => {
+    // if (event.code === "Enter") {
+    //   this.handleinputValueOne()
+    // }
+  }
+
   render() {
     return (
       <div style={{ display: this.state.showLoadingPage === false ? 'block' : 'none', background: '#f3f3f3' }}>
@@ -164,7 +177,7 @@ class App extends React.Component {
                   <div style={{ display: this.state.handleButtonOne ? "block" : "none" }}>
                     <TextField
                       id="outlined-basic" value={this.state.inputValueOne} onChange={this.handleinputValueOne}
-                      label="Enter GitHub user" variant="outlined" />
+                      label="Enter GitHub user" variant="outlined" onKeyDown={this.handleKeyDownOne}/>
                     <Button variant="contained" disabled={!this.state.inputValueOne}
                       onClick={this.handleSubmitButtonOne}
                       style={{ height: "55px", cursor: 'pointer' }}
@@ -173,7 +186,7 @@ class App extends React.Component {
                   <div style={{ display: this.state.handleButtonTwo ? "block" : "none" }}>
                     <TextField
                       id="outlined-basic" value={this.state.inputValueTwo} onChange={this.handleinputValueTwo}
-                      label="Enter GitHub user" variant="outlined" />
+                      label="Enter GitHub user" variant="outlined" onKeyDown={this.handleKeyDown}/>
                     <Button variant="contained" disabled={!this.state.inputValueTwo}
                       onClick={this.handleSubmitButtonTwo}
                       style={{ height: "55px", cursor: 'pointer' }}
@@ -199,6 +212,7 @@ class App extends React.Component {
                       <span className='userLinkContainer'><a href='https://github.com/nawazzz'>{this.state.ghDataSecondUser.login}</a></span>
                     </div>
                     <span onClick={this.handleUserOutputTwo}
+                      
                       style={{ display: !this.state.handleButtonTwo ? 'block' : "none", cursor: "pointer", fontWeight: "700", paddingTop: '10px' }}
                     >x</span>
                   </div>
@@ -212,7 +226,7 @@ class App extends React.Component {
               </div>
             </div>
           )}
-        <Battling showLoadingPage={this.state.showLoadingPage} />
+        {/* <Battling showLoadingPage={this.state.showLoadingPage} style={{display: this.state.showLoadingPage? "block": "none"}} /> */}
       </div>
     )
   }
