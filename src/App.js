@@ -61,7 +61,8 @@ class App extends React.Component {
 
   handleUserOutput = (event) => {
     this.setState({
-      handleButtonOne: !this.state.handleButtonOne
+      handleButtonOne: !this.state.handleButtonOne,
+      ghData: []
     })
   }
 
@@ -92,7 +93,8 @@ class App extends React.Component {
 
   handleUserOutputTwo = (event) => {
     this.setState({
-      handleButtonTwo: !this.state.handleButtonTwo
+      handleButtonTwo: !this.state.handleButtonTwo,
+      ghDataSecondUser: []      
     })
   }
 
